@@ -31,7 +31,23 @@
     var myDataValue = '1.75m';
     person[myDataName] = myDataValue;
     
-    // 객체 리터럴 : 객체를 생성할 때 컨텐츠를 그대로 대입
+    // 객체 리터럴: 객체를 생성할 때 컨텐츠를 그대로 대입
+
+    function Person(first, last, age, gender, interests) {
+      this.name = {
+        'first': first,
+        'last' : last
+      };
+      this.age = age;
+      this.gender = gender;
+      this.interests = interests;
+      this.bio = function() {
+        alert(this.name.first + ' ' + this.name.last + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+      };
+      this.greeting = function() {
+        alert('Hi! I\'m ' + this.name.first + '.');
+      };
+    }
 
   </script>
 </html>
